@@ -4,5 +4,11 @@ secondsSinceEpoch = int(time.time())
 daysSinceEpoch = int(secondsSinceEpoch / 86400)
 timeData = time.localtime()
 
-print('current time: ', str(timeData.tm_hour) + ':' + str(timeData.tm_min) + ':' + str(timeData.tm_sec))
+days = int(timeData.tm_mday)
+hours = int(timeData.tm_hour)
+mins = int(timeData.tm_min)
+secs = int(timeData.tm_sec)
+currentTime = ('current time: %d days, %d hours, %d mins %d secs') % (days, hours, mins, secs)
+
+print(currentTime)
 print('Days since epoch:', daysSinceEpoch)
