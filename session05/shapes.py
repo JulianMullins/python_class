@@ -24,6 +24,8 @@ def arc(t, r, angle):
         t.fd(step_length)
         t.lt(step_angle)
 
+
+# create large circle
 def drawCenterCircle(width):
     julian.up()
     julian.setpos(0, -width)
