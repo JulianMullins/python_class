@@ -8,19 +8,14 @@ def crazy_about_9(a, b):
     a, b: two integers
     Returns True if either one is 9, or if their sum or difference is 9. 
     """
-
-    if(a == 9 or b == 9 or abs(a-b) == 9 or abs(a+b) == 9):
-        return True
-    else:
-        return False
-
+    return a == 9 or b == 9 or abs(a-b) == 9 or a+b == 9
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(crazy_about_9(2, 9))
-# print(crazy_about_9(4, 5))
-# print(crazy_about_9(3, 8))
+print(crazy_about_9(2, 9))
+print(crazy_about_9(4, 5))
+print(crazy_about_9(3, 8))
 
 
 """
@@ -42,7 +37,7 @@ def leap_year(year):
     year(int): a year
     Returns True if year is a leap_year, False if year is not a leap_year.
     """
-    if(year % 4 == 0 or year % 400 == 0):
+    if(year % 4 == 0 or year % 400 == 0 and year % 100 != 0):
         return True
     else:
         return False
@@ -51,10 +46,10 @@ def leap_year(year):
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(leap_year(1900))
-# print(leap_year(2016))
-# print(leap_year(2017))
-# print(leap_year(2000))
+print(leap_year(1900))
+print(leap_year(2016))
+print(leap_year(2017))
+print(leap_year(2000))
 
 
 """
@@ -68,11 +63,8 @@ import math
 
 def sum_squares(n):
     sum = 0
-
     for i in range(1, n+1, 1):
-        if(len(str(math.sqrt(i))) == 3):
-            sum += i
-
+            sum += i*i
     return sum
 
 
