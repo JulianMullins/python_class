@@ -33,13 +33,17 @@ class Candidate:
         state: a string of state abbreviation
         """
         self.winning_states.append(state)
+
+        for key in ELECTORS:
+            if key == state:
+                self.votes += ELECTORS[key]
         self.votes += 1
 
 
 
 def main():
     trump = Candidate('Donald Trump')
-    clinton = Candidate('Hillary Clinton', winning_states=['CA'])
+    clinton = Candidate('Hillary Clinton', winning_states=['CA'], votes=55)
     print(trump)
     print(clinton)
     print()
